@@ -1,13 +1,13 @@
 #!/bin/bash
 
 current_color() {
-  echo `osascript -s s -e "tell application \"iTerm\" to tell the current terminal to tell the current session to get its background color"`
+  echo `osascript -s s -e "tell application \"iTerm\" to tell the current window to tell the current session to get its background color"`
 }
 
 set_color() {
   /usr/bin/osascript <<EOF
 tell application "iTerm"
-  tell the current terminal
+  tell the current window
     tell the current session
       set background color to $1
     end tell
